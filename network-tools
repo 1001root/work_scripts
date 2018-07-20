@@ -1,0 +1,24 @@
+ping
+route 
+traceroute
+host
+dig
+nslookup
+ifconfig
+iwconfig
+sudo ifconfig wlan0 up //check name of wlan0 via iwconfig
+sudo rfkill list all
+sudo rfkill unblock wlan0/all;
+sudo lshw -class network
+nm-connection-editor //for passwords change
+nmcli               nmcli dev show(shows every detail)
+----------------------------***************---------------------
+nmtui
+ip addr show ---------ip route show
+ethtool
+netstat
+nmap
+tcpdump
+iptraf
+mtr
+

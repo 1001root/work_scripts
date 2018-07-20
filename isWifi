@@ -1,0 +1,16 @@
+#!/bin/bash
+
+ping -c 1 google.com > /dev/null
+
+if [ $? -ne 0 ]
+then  
+	{ ping -c 1 youtube.com > /dev/null; }
+fi
+if [ ! $? -ne 0 ]
+then
+      echo "NET is FUCKING Working"; exit 0 
+fi
+#[ ! -n $? ] && { echo "NET is FUCKING Woring"; exit 0; }
+
+echo "Sorry Dude !!  Net is not up "
+exit 1

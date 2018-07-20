@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#echo $1
+
+#if [ $1 == "on" ]
+#then 
+#	echo "vairaxa"
+#fi	
+
+if [ $1 == "on" ]
+then
+	 nmcli radio wifi on
+	 sleep 3
+	 nmcli dev wifi hotspot con-name CRLannister password Vandinaa ssid Valyria
+	 exit 0
+fi
+
+if [ $1 == "off" ] 
+then
+	#nmcli c | grep "wlp2s0"
+	nmcli c | grep "wlp2s0" |awk '{ print $2}'>1q2w3e4r
+        nmcli connection down "$(< 1q2w3e4r)"
+	rm -f 1q2w3e4r
+	exit 0
+
+fi
+
+if [ $1 == "woff" ]
+then 
+	 nmcli c | grep "wlp2s0" |awk '{ print $2}'>1q2w3e4r
+        nmcli connection down "$(< 1q2w3e4r)"
+        rm -f 1q2w3e4r
+	nmcli radio wifi off
+        exit 0
+fi

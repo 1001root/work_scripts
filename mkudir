@@ -1,0 +1,19 @@
+#!/bin/bash
+
+args=$#
+#echo $args
+if [ ! $args -ne 0 ]
+then
+	echo "No directory name passed "
+	exit 1
+fi
+for ((i=1; i<=$args; i++))
+do
+ #	eval two=\$$i
+ 	two=${!i}
+#	echo $two
+	thre=$( tr '[:lower:]' '[:upper:]' <<<$two ) 
+#	echo $thre
+	mkdir $thre
+done
+exit 0

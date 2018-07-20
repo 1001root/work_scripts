@@ -1,0 +1,33 @@
+man 1 test for file/directory checks
+
+bash -x //for debugging
+set -x and set +x for debugging inside the script
+set -n and set -o as well
+
+#echo -e "smfkfmslk \c" for no newline in echo
+
+read -p //display prompt to user without a newline
+read -t 10  n1 //terminates if input not provided within 10 secs.
+#Use unset command to delete the variables during program execution. It can remove both functions and shell variables.
+
+The := syntax // ${var:=defaultValue}
+for if var is empty assign a default value //also can be used to assign default values in functions like:
+die(){
+  local error=${1:=Undefined error} 
+}//${1:-        means $1 argument
+
+     All command line parameters or arguments can be accessed via $1, $2, $3,..., $9.
+    $* holds all command line parameters or arguments.
+    $# holds the number of positional parameters.
+    $- holds flags supplied to the shell.
+    $? holds the return value set by the previously executed command.
+    $$ holds the process number of the shell (current shell).
+    $! hold the process number of the last background command.
+    $@ holds all command line parameters or arguments.
+
+$@ expanded as "$1" "$2" "$3" ... "$n"
+$* expanded as "$1y$2y$3y...$n", where y is the value of $IFS variable i.e. "$*" is one long string and $IFS act as an separator or token delimiters. 
+
+${varName?Error varName is not defined}
+${varName:?Error varName is not defined or is empty}
+

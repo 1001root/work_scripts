@@ -1,0 +1,16 @@
+What is the difference between adduser and useradd?
+
+The command useradd can only create the user. After that, we need to use passwd to set up password for the new user. The command adduser not noly creates a user, but also creates a directory, and a password.
+--------------------------------------------------------------------------------
+---whereis---
+You use this command to find three paths. Two of them are the paths of executable files and another one is the path of a man online help file. This search is really quick because it does not look up from the hard disk; instead it queries directly from the database. whereis can only search for binary files (-b), man help files (-m), and source code files (-s). If you want to get more comprehensive search results you can use the locate command.
+
+    ---locate--
+
+This command finds files through the "/var/lib/mlocate/mlocate.db" database, but this database is not updated in real time. The system will automatically update once a day. So it may not find the file that you just added. You need to manually update using the updatedb command. locate can be used to find different file types, such as finding all files that start with "/sh":
+
+---------find----------
+Find should be the most powerful of these commands. It can not only find files by file type, file name, but can also search files based on file attributes (such as file timestamp, file permissions, and etc.).
+
+The following command can search for a file or directory named interfaces in the /etc/ directory. This is the most common form of find. Remember the first parameter of find is the search destination:
+$ sudo find /etc/ -name interfaces 
