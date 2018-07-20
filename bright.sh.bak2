@@ -1,0 +1,13 @@
+#!/bin/bash
+
+light="$(sudo cat /sys/class/backlight/intel_backlight/brightness)" 
+#echo $light
+if [ $light -lt 750 ]
+then
+inc_light=$(($light+50))
+sudo cat> /sys/class/backlight/intel_backlight/brightness<<EOF
+$inc_light
+EOF
+echo $inc_light
+sudo cat /sys/class/backlight/intel_backlight/brightness
+fi

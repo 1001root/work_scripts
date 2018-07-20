@@ -1,0 +1,3 @@
+/etc/NetworkManager/system-connections/
+arp #sudo users for hotspot connections
+

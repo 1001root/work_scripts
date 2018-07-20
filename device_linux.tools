@@ -1,0 +1,13 @@
+lsusb
+df
+fdisk -l
+Gparted
+//disk in dash
+blkid
+//check files in /dev/sd*
+lsblk
+dd
+mount
+mkfs.----
+
+gnome-control-center //Settings tab

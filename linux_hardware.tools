@@ -1,0 +1,12 @@
+xdotool key XF86MonBrightnessUp //brightens the screen
+xdotool key XF86MonBrightnessDown//dims the screen
+
+#made tapping possible in touchpad in i3-wm
+xinput list
+xinput set-prop "DLLC6B2:00 06CB:75BF Touchpad" "libinput Tapping Enabled" 1
+#made natural scrolling possible
+xinput set-prop "DLLC6B2:00 06CB:75BF Touchpad" "libinput Natural Scrolling Enabled" 1
+
+#for manually changing brightness change value of /sys/class/backlight/intel_backlight/brightness file #note never set it to 0 or for safe measures below 25
+
+xmodmap -pke | gives keyboard mapppings
